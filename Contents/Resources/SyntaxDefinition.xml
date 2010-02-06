@@ -185,10 +185,30 @@
                     <regex>(?:txp\:)([\w-]*)</regex>
                     
                 </keywords>
+                
+                
+                <keywords id="Attributes" color="#994500" inverted-color="#FFAB65" useforautocomplete="no">
+                    <regex>([\w-]*)(?=[ \t]*=)</regex>
+
+                </keywords>
+                
+                <state id="Strings" type="string" color="#1A1AA6" inverted-color="#DFDF00" useforautocomplete="no">
+                    <begin><regex>"</regex></begin>
+                    <end><regex>"</regex></end>
+                    <state-link state="TextPattern" />
+                    <state-link state="TextPattern PHP" />
+                </state>
+                
+                <state id="Single" type="string" color="#1A1AA6" inverted-color="#FF7F00" useforautocomplete="no">
+                    <begin><regex>'</regex></begin>
+                    <end><regex>'</regex></end>
+                    <state-link state="TextPattern" />
+                    <state-link state="TextPattern PHP" />
+                </state>
             
             </state>
             
-            <state id="TextPattern PHP" color="#008405" inverted-color="#00FF04" font-weight="normal" font-style="normal" usesymbolsfrommode="PHP-HTML" useautocompletefrommode="PHP-HTML">
+            <state id="TextPattern PHP" color="#000000" inverted-color="#FFFFFF" font-weight="normal" font-style="normal" usesymbolsfrommode="PHP-HTML" useautocompletefrommode="PHP-HTML">
                 <begin><regex>&lt;txp:php[\s]*?&gt;</regex></begin>
                 <end><regex>&lt;/txp:php[\s]*?&gt;</regex></end>
                 
